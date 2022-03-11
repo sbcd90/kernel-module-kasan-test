@@ -49,8 +49,17 @@ static int __init test_kasan_module_init(void)
 	 */
 	bool multishot = kasan_save_enable_multi_shot();
 
+	/**
+	 * create & return ptr
+	 */
 	struct test_kasan_info *ptr = create_ptr();
+	/**
+	 * free ptr
+	 */ 
 	free_ptr(ptr);
+	/**
+	 * access ptr, use after ptr is freed
+	 */ 
 	access_ptr(ptr);
 
 	kasan_restore_multi_shot(multishot);
