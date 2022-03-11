@@ -1,0 +1,6 @@
+*
+
+!.gitignore
+!Makefile
+!test_kasan1.c
+!README.md
